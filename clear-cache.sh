@@ -17,6 +17,7 @@ echo "Before:"
 du -sh /tmp
 du -sh /var/tmp
 du -sh .cache
+du -sh /var/lib/docker
 du -sh .var/app/com.stremio.Stremio/.stremio-server/stremio-cache
 
 echo ""
@@ -24,6 +25,7 @@ echo ""
 rm -rf /tmp/*
 rm -rf /var/tmp/*
 rm -rf .cache/*
+docker system prune -a -f > /dev/null
 rm -rf .var/app/com.stremio.Stremio/.stremio-server/stremio-cache/*
 
 echo ""
@@ -32,6 +34,7 @@ echo "After:"
 du -sh /tmp
 du -sh /var/tmp
 du -sh .cache
+du -sh /var/lib/docker
 du -sh .var/app/com.stremio.Stremio/.stremio-server/stremio-cache
 
 echo ""
